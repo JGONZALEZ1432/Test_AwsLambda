@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pulls
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@JGONZALEZ1432 
-jacksonyuan-yt
-/
-basic-serverless-lambda
-Public
-Fork your own copy of jacksonyuan-yt/basic-serverless-lambda
-Code
-Issues
-1
-Pull requests
-1
-Actions
-Projects
-Security
-Insights
-basic-serverless-lambda/.github/workflows/main.yml
-@jacksonyuan-yt
-jacksonyuan-yt initial commit
-Latest commit b6e328c on Dec 28, 2020
- History
- 1 contributor
-31 lines (27 sloc)  731 Bytes
-
 name: Deploy Lambda
 
 on:
