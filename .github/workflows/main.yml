@@ -20,10 +20,10 @@ jobs:
    steps:
    - name: Use Node.js ${{ matrix.node-version }}
      uses: actions/setup-node@v1
-      with:
+     with:
         node-version: ${{ matrix.node-version }}
    - uses: serverless/github-action@master
-      with:
+     with:
         args: deploy
       env:
         # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
