@@ -21,8 +21,7 @@ jobs:
   CD:
    name: CD
    steps:
-   - name: serverless deploy
-      uses: serverless/github-action@master
+   - uses: serverless/github-action@master
       with:
         args: CD
       env:
