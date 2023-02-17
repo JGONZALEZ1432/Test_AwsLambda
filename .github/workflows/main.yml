@@ -18,15 +18,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
-    
   CD:
    name: CD
    steps:
    - name: serverless deploy
       uses: serverless/github-action@master
       with:
-        args: deploy
+        args: CD
       env:
         # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
         # or if using AWS credentials directly
