@@ -20,6 +20,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
   CD:
    name: CD
+   needs: deploy
    steps:
    - uses: serverless/github-action@master
       with:
