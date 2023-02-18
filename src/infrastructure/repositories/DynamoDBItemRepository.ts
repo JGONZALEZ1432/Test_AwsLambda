@@ -8,7 +8,7 @@ const dynamoDb = new DynamoDB.DocumentClient();
 export class DynamoDBItemRepository {
   async getAll(): Promise<Item[]> {
     const params: DynamoDB.DocumentClient.ScanInput = {
-      TableName: process.env.DYNAMODB_TABLE_NAME as string,
+      TableName: "prueba",
     };
 
     const result = await dynamoDb.scan(params).promise();
@@ -18,7 +18,7 @@ export class DynamoDBItemRepository {
 
   async getById(id: string): Promise<Item | null> {
     const params: DynamoDB.DocumentClient.GetItemInput = {
-      TableName: process.env.DYNAMODB_TABLE_NAME as string,
+      TableName: "prueba",
       Key: {
         id,
       },
