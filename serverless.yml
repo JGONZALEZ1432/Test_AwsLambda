@@ -1,9 +1,3 @@
-
-This Lambda function imports our `DynamoDBItemRepository` and `GetItemsUseCase` classes, and defines a `handler` function that will use them to get all items from the database and return them as a JSON string in the response body. It also handles any errors that may occur and returns a 500 status code with a generic error message.
-
-Finally, let's configure the deployment of our Lambda function using the `serverless.yml` file:
-
-```yaml
 # serverless.yml
 
 service: my-lambda-function
