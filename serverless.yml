@@ -9,12 +9,28 @@ provider:
 functions:
 createUser:
     handler: src/interfaces/handlers.createUserHandler
+events:
+      - http:
+          method: post
+          path: /users
 getUser:
     handler: src/interfaces/handlers.getUserHandler    
+events:
+      - http:
+          method: get
+          path: /users/{id}
 updateUser:
     handler: src/interfaces/handlers.updateUserHandler
+events:
+      - http:
+          method: put
+          path: /users
 deleteUser:
     handler: src/interfaces/handlers.deleteUserHandler
+events:
+      - http:
+          method: delete
+          path: /users/{id}
 
 custom:
   esbuild:
