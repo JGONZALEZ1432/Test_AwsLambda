@@ -8,7 +8,7 @@ provider:
 
 functions:
   finance:
-    handler: src/handlerHttp.handler
+    handler: src/interfaces/http/book-router.handler
 
 custom:
   esbuild:
