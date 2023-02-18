@@ -26,7 +26,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy to Lambda
-        uses: brightleaf/actions-aws/lambda@main
+        uses: brightleaf/actions-aws@main
         with:
           aws-lambda-function-name: my-lambda-function
           aws-lambda-zip-file: dist.zip
