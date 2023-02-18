@@ -21,7 +21,9 @@
   "dependencies": {
     "@types/aws-lambda": "^8.10.110",
     "aws-lambda": "^1.0.7",
-    "aws-sdk": "^2.1318.0"
+    "aws-sdk": "^2.1318.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
   },
   "devDependencies": {
     "serverless": "^3.27.0",
