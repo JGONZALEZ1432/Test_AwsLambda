@@ -16,7 +16,7 @@ jobs:
         run: npm ci
 
       - name: Deploy to AWS
-        uses: ease-innovation/serverless-aws-action@v1.2
+        uses: serverless/github-action@v3
         with:
           args: deploy -v
         env:
