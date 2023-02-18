@@ -15,19 +15,19 @@ events:
           path: /users
 getUser:
     handler: src/interfaces/handlers.getUserHandler    
-events:
+    events:
       - http:
           method: get
           path: /users/{id}
 updateUser:
     handler: src/interfaces/handlers.updateUserHandler
-events:
+    events:
       - http:
           method: put
           path: /users
 deleteUser:
     handler: src/interfaces/handlers.deleteUserHandler
-events:
+    events:
       - http:
           method: delete
           path: /users/{id}
