@@ -5,25 +5,25 @@ provider:
 
 functions:
   createUser:
-    handler: dist/interfaces/handlers.createUserHandler
+    handler: dist/interfaces/handler.createUserHandler
     events:
       - http:
           path: /users
           method: post
   getUser:
-    handler: dist/interfaces/handlers.getUserHandler
+    handler: dist/interfaces/handler.getUserHandler
     events:
       - http:
           path: /users/{id}
           method: get
   updateUser:
-    handler: dist/interfaces/handlers.updateUserHandler
+    handler: dist/interfaces/handler.updateUserHandler
     events:
       - http:
           path: /users/{id}
           method: put
   deleteUser:
-    handler: dist/interfaces/handlers.deleteUserHandler
+    handler: dist/interfaces/handler.deleteUserHandler
     events:
       - http:
           path: /users/{id}
