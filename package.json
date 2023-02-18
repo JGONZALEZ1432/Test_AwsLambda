@@ -1,18 +1,31 @@
 {
-  "name": "my-lambda",
+  "name": "Test_AwsLambda",
   "version": "1.0.0",
-  "description": "My Serverless Lambda Function",
+  "description": "",
   "main": "dist/GetItemsLambda.js",
   "scripts": {
     "build": "tsc",
     "deploy": "sls deploy"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGONZALEZ1432/Test_AwsLambda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JGONZALEZ1432/Test_AwsLambda/issues"
+  },
+  "homepage": "https://github.com/JGONZALEZ1432/Test_AwsLambda#readme",
   "dependencies": {
-    "aws-sdk": "^2.1071"
+    "@types/aws-lambda": "^8.10.110",
+    "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1318.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.70",
-    "serverless": "^2.57.0",
-    "typescript": "^4.5.5"
+    "serverless": "^3.27.0",
+    "serverless-offline": "^12.0.4",
+    "typescript": "^4.9.5"
   }
 }
