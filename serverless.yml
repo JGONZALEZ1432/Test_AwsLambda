@@ -8,4 +8,4 @@ provider:
 
 functions:
   hello:
-    handler: src/handler.price
+    handler: dist/index.handler
