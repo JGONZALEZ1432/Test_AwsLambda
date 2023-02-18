@@ -1,4 +1,4 @@
-service: my-service
+service: my-lambda-function
 
 provider:
   name: aws
@@ -6,9 +6,9 @@ provider:
   region: us-east-1
 
 functions:
-  createUser:
-    handler: src/interfaces/CreateUserController.createUser
+  getItems:
+    handler: dist/handlers/getItems.handler
     events:
       - http:
-          path: users
-          method: post
+          path: /items
+          method: get
