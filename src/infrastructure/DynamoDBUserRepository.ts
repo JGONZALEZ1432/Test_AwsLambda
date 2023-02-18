@@ -1,7 +1,7 @@
 import { DocumentClient } from "aws-sdk/clients/dynamodb";
 import { User } from "../domain/entities/User";
 import { UserRepository } from "../domain/repositories/UserRepository";
-//enviarlo a entorno
+//enviarlo 
 const TABLE_NAME = "vehicle_availability";
 
 export class DynamoDBUserRepository implements UserRepository {
