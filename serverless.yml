@@ -1,34 +1,27 @@
+
+This Lambda function imports our `DynamoDBItemRepository` and `GetItemsUseCase` classes, and defines a `handler` function that will use them to get all items from the database and return them as a JSON string in the response body. It also handles any errors that may occur and returns a 500 status code with a generic error message.
+
+Finally, let's configure the deployment of our Lambda function using the `serverless.yml` file:
+
+```yaml
+# serverless.yml
+
 service: my-lambda-function
+
 provider:
   name: aws
   runtime: nodejs14.x
+  region: us-east-1
+  environment:
+    DYNAMODB_TABLE_NAME: my-dynamodb-table-name
 
 functions:
-  createUser:
-    handler: src/interfaces/handler.createUserHandler
+  getItems:
+    handler: src/usecases/GetItemsLambda.handler
     events:
       - http:
-          path: /users
-          method: post
-  getUser:
-    handler: src/interfaces/handler.getUserHandler
-    events:
-      - http:
-          path: /users/{id}
           method: get
-  updateUser:
-    handler: src/interfaces/handler.updateUserHandler
-    events:
-      - http:
-          path: /users/{id}
-          method: put
-  deleteUser:
-    handler: src/interfaces/handler.deleteUserHandler
-    events:
-      - http:
-          path: /users/{id}
-          method: delete
+          path: /items
 
-package:
-  include:
-    - dist/**
+plugins:
+  - serverless-offline

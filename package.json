@@ -1,31 +1,29 @@
 {
-  "name": "ts-lambda",
+  "name": "Test_AwsLambda",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "serverless offline",
-    "deploy": "serverless deploy"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGONZALEZ1432/Test_AwsLambda.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.93",
-    "esbuild": "^0.14.31",
-    "serverless": "^3.11.0",
-    "serverless-esbuild": "^1.26.1",
-    "serverless-offline": "^8.8.1",
-    "serverless-plugin-typescript": "^2.1.4",
-    "ts-loader": "^9.4.2",
-    "typescript": "^4.9.5",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+  "bugs": {
+    "url": "https://github.com/JGONZALEZ1432/Test_AwsLambda/issues"
   },
+  "homepage": "https://github.com/JGONZALEZ1432/Test_AwsLambda#readme",
   "dependencies": {
-    "@types/aws-sdk": "^2.7.0",
-    "aws-sdk": "^2.1318.0",
-    "express": "^4.18.2",
-    "serverless-http": "^3.1.1"
+    "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1318.0"
+  },
+  "devDependencies": {
+    "serverless": "^3.27.0",
+    "serverless-offline": "^12.0.4",
+    "typescript": "^4.9.5"
   }
 }
