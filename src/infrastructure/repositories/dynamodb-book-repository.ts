@@ -2,7 +2,7 @@ import { DocumentClient } from "aws-sdk/clients/dynamodb";
 import { Book } from "../../domain/entities/book";
 import { BookRepository } from "../../domain/repositories/book-repository";
 
-const BOOKS_TABLE = "Prub";
+const BOOKS_TABLE = "vehicle_availability";
 
 export class DynamoDBBookRepository implements BookRepository {
   constructor(private client: DocumentClient) {}
