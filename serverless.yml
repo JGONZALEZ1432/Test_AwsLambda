@@ -7,8 +7,14 @@ provider:
   runtime: nodejs14.x
 
 functions:
-  finance:
-    handler: src/interfaces/http/book-router.handler
+createUser:
+    handler: src/interfaces/handlers.createUserHandler
+getUser:
+    handler: src/interfaces/handlers.getUserHandler    
+updateUser:
+    handler: src/interfaces/handlers.updateUserHandler
+deleteUser:
+    handler: src/interfaces/handlers.deleteUserHandler
 
 custom:
   esbuild:
