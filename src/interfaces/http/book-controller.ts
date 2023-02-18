@@ -14,9 +14,7 @@ export async function createBook(
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> {
   try {
-    if(!event.body){
-        console.log('Error')
-    }
+    console.log('event',event)
     if(!event.body){
         console.log('Error')
     }
@@ -105,7 +103,7 @@ export async function findBookById(
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: "An error occurred",
+        message: "An error occurred " + error,
       }),
     };
   }
