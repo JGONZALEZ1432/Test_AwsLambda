@@ -35,5 +35,6 @@ custom:
     minify: true
 
 plugins:
+  - serverless-plugin-typescript
   - serverless-esbuild
   - serverless-offline
