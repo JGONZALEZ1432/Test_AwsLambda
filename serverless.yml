@@ -1,40 +1,34 @@
-service: Pricing-Vehicles
+service: my-lambda-function
 provider:
   name: aws
   runtime: nodejs14.x
 
 functions:
   createUser:
-    handler: dist/interfaces/handlers.createUserHandler
+    handler: dist/interfaces/handlers/createUserHandler.createUserHandler
     events:
       - http:
+          path: /users
           method: post
-          path: /users
   getUser:
-    handler: dist/interfaces/handlers.getUserHandler    
+    handler: dist/interfaces/handlers/getUserHandler.getUserHandler
     events:
       - http:
+          path: /users/{id}
           method: get
-          path: /users/{id}
   updateUser:
-    handler: dist/interfaces/handlers.updateUserHandler
+    handler: dist/interfaces/handlers/updateUserHandler.updateUserHandler
     events:
       - http:
-          method: put
-          path: /users
-  deleteUser:
-    handler: dist/interfaces/handlers.deleteUserHandler
-    events:
-      - http:
-          method: delete
           path: /users/{id}
+          method: put
+  deleteUser:
+    handler: dist/interfaces/handlers/deleteUserHandler.deleteUserHandler
+    events:
+      - http:
+          path: /users/{id}
+          method: delete
 
-custom:
-  esbuild:
-    bundle: true
-    minify: true
-
-plugins:
-  - serverless-plugin-typescript
-  - serverless-esbuild
-  - serverless-offline
+package:
+  include:
+    - dist/**
