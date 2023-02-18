@@ -5,7 +5,7 @@ provider:
 
 functions:
   createUser:
-    handler: src/interfaces/handlers.createUserHandler
+    handler: dist/interfaces/handlers.createUserHandler
     events:
       - http:
           method: post
