@@ -14,7 +14,7 @@ export async function createBook(
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> {
   try {
-    console.log('event',event)
+    console.log('event',event.body)
     if(!event.body){
         console.log('Error')
     }
