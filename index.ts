@@ -1,13 +1,16 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResultV2, Handler } from 'aws-lambda';
-import * as _ from 'lodash';
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { GetItemController } from './src/controller';
+import { DynamoDataAccessLayer } from './src/data-access-layer';
+import { GetItemUseCase } from './src/use-case';
 
-export const handler: Handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResultV2> => {
-  //#new cod
-  const max = 999;
-  const val = _.random(max);
-  const response = {
-    statusCode: 200,
-    body: `The random value (max ${max}) is: ${val}`,
-  };
-  return response;
-};
+const tableName = "vehicle_availability";
+
+const dataAccessLayer = new DynamoDataAccessLayer(tableName);
+const getItemUseCase = new GetItemUseCase(dataAccessLayer);
+const getItemController = new GetItemController(getItemUseCase);
+
+export async function handler(
+  event: APIGatewayProxyEvent
+): Promise<APIGatewayProxyResult> {
+  return getItemController.handle(event);
+}
