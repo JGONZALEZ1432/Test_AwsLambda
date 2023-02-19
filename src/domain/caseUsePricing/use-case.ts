@@ -1,4 +1,5 @@
 import { IDataAccessLayer } from '../../repositoryService/data-access-layer';
+import { Message } from '../../utils/Constants';
 
 interface IGetItemUseCase {
   execute(id: string): Promise<any>;
@@ -15,7 +16,7 @@ class GetItemUseCase implements IGetItemUseCase {
     const item = await this.dataAccessLayer.getItem(id);
 
     if (!item) {
-      throw new Error('Item not found');
+      return Message._404_NOT_FOUND;
     }
 
     return item;

@@ -20,8 +20,7 @@ class GetItemController {
       };
     } catch (error) {
       console.error(error);
-
-      return Message._404_NOT_FOUND;
+      return Message._500_UNCONTROLLED_ERROR;
     }
   }
 }
