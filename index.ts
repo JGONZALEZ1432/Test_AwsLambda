@@ -1,7 +1,7 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { GetItemController } from './src/controller';
-import { DynamoDataAccessLayer } from './src/data-access-layer';
-import { GetItemUseCase } from './src/use-case';
+import { DynamoDataAccessLayer } from './src/repositoryService/data-access-layer';
+import { GetItemUseCase } from './src/domain/caseUsePricing/use-case';
 
 const tableName = "vehicle_availability";
 

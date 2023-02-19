@@ -1,4 +1,4 @@
-import { IDataAccessLayer } from './data-access-layer';
+import { IDataAccessLayer } from '../../repositoryService/data-access-layer';
 
 interface IGetItemUseCase {
   execute(id: string): Promise<any>;

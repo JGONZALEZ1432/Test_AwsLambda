@@ -1,8 +1,5 @@
 import { DynamoDB } from 'aws-sdk';
-
-interface IDataAccessLayer {
-  getItem(id: string): Promise<any>;
-}
+import { IDataAccessLayer } from '../domain/request-model/requestModelInput';
 
 class DynamoDataAccessLayer implements IDataAccessLayer {
   private dynamoClient: DynamoDB.DocumentClient;

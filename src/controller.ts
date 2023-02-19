@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { IGetItemUseCase } from './use-case';
+import { IGetItemUseCase } from './domain/caseUsePricing/use-case';
 import { Message } from './utils/Constants';
 
 class GetItemController {
@@ -11,7 +11,7 @@ class GetItemController {
 
   async handle(event: APIGatewayProxyEvent): Promise<any> {
     try {
-      const { id } = event.pathParameters;
+      const { id } = event.queryStringParameters;
       const item = await this.getItemUseCase.execute(id);
 
       return {
