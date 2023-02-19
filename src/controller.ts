@@ -1,5 +1,6 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { IGetItemUseCase } from './use-case';
+import { Message } from './utils/Constants';
 
 class GetItemController {
   private getItemUseCase: IGetItemUseCase;
@@ -8,7 +9,7 @@ class GetItemController {
     this.getItemUseCase = getItemUseCase;
   }
 
-  async handle(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
+  async handle(event: APIGatewayProxyEvent): Promise<any> {
     try {
       const { id } = event.pathParameters;
       const item = await this.getItemUseCase.execute(id);
@@ -20,10 +21,7 @@ class GetItemController {
     } catch (error) {
       console.error(error);
 
-      return {
-        statusCode: 404,
-        body: JSON.stringify({ message: error.message }),
-      };
+      return Message._404_NOT_FOUND;
     }
   }
 }
